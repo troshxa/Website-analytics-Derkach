@@ -4,7 +4,8 @@
 #include <unordered_map>
 #include <vector>
 using namespace std;
-
+const string FIRSTDAY = "firstday.csv";
+const string SECONDDAY = "secondday.csv";
 int main(){
     unordered_map<int, set<int>> map;
     set<int> visitedSame;
@@ -16,7 +17,7 @@ int main(){
     int second;
     int loc =0;
     
-    firstDay.open("firstday.csv");
+    firstDay.open(FIRSTDAY);
     getline(firstDay, line);
     while(getline(firstDay, line)){ 
         loc = line.find(',');
@@ -32,7 +33,7 @@ int main(){
         };
     };
     firstDay.close();
-    secondDay.open("secondday.csv");
+    secondDay.open(SECONDDAY);
     getline(secondDay, line);
     while (getline(secondDay, line))
     {
@@ -50,6 +51,7 @@ int main(){
             }
         }
     }
+    secondDay.close();
     cout << "Users that visited the same page:" << endl;
     for (auto Id : visitedSame){
         cout << Id<<endl;
@@ -58,6 +60,4 @@ int main(){
     for (auto Id : visitedNew){
         cout << Id<<endl;
     };
-
-
 };
