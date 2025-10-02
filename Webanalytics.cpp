@@ -2,7 +2,6 @@
 #include <set>
 #include <fstream>
 #include <unordered_map>
-#include <vector>
 using namespace std;
 const string FIRSTDAY = "firstday.csv";
 const string SECONDDAY = "secondday.csv";
